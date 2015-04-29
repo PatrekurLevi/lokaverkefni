@@ -1,3 +1,15 @@
+body{
+  color: white;
+  background-image: url(elviswallpaper.jpg);
+  background-size: 100%;
+}
+a:visited
+{
+color: gray;
+}
+a{
+  color: white;
+}
 p#cf7_controls {
   text-align:left;
   margin-top:-2em;
