@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html class=" js cssanimations csstransforms csstransforms3d csstransitions cssfilters" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+  
+    <meta name="twitter:card" content="summary">
+          <title>Crossfading Images | CSS transitions, CSS transforms and CSS animation</title>
+      <meta name="description" content="How to use CSS transitions to cross fade an image">
+      <meta name="twitter:title" content="Crossfading Images | CSS transitions, CSS transforms and CSS animation">
+      <meta name="twitter:description" content="How to use CSS transitions to cross fade an image">
+            <meta name="twitter:site" content="@richbradshaw">
+      <meta name="google-site-verification" content="zTH7hEgeKVTkOu0F5bO5Guw9iRHWBJdCX0RpMASGZVI">
+      <meta name="readability-verification" content="c8jHSrt95TDJkTCHeYdz3m5H3tcmuQmzfbHPK7kG">
+
+      <meta name="twitter:creator" content="@richbradshaw">
+
+      <link href="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap.css" rel="stylesheet">
+      <link href="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/style.css" rel="stylesheet">
+      <style type="text/css">
+        body {
+          padding-bottom: 40px;
+        }
+      </style>
+      
+      <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+        <!-- CSS3 -->
+    <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/all.js" id="facebook-jssdk"></script><script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/widgets.js" id="twitter-wjs"></script><script async="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/cbgapi.loaded_1"></script><script async="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/cbgapi.loaded_0"></script><script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/ca-pub-7181696033265659.js" type="text/javascript" async=""></script><script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/dc.js" async="" type="text/javascript"></script><script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-16444273-1']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_trackPageLoadTime']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <script>
+      if (document.referrer.match(/google\.com/gi) && document.referrer.match(/cd/gi)) {
+        var myString = document.referrer;
+        var r        = myString.match(/cd=(.*?)&/);
+        var rank     = parseInt(r[1]);
+        var kw       = myString.match(/q=(.*?)&/);
+
+        if (kw[1].length > 0) {
+          var keyWord  = decodeURI(kw[1]);
+        } else {
+          keyWord = "(not provided)";
+        }
+
+        var p        = document.location.pathname;
+        _gaq.push(['_trackEvent', 'RankTracker', keyWord, p, rank, true]);
+      }
+    </script>
+    
+
+    <link rel="shortcut icon" href="http://css3.bradshawenterprises.com/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://css3.bradshawenterprises.com/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://css3.bradshawenterprises.com/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://css3.bradshawenterprises.com/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://css3.bradshawenterprises.com/apple-touch-icon-57-precomposed.png">
+    <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/modernizr.js"></script>
+    <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/jquery.js"></script>
+
+    <style>
+            body {
+        font-family:'Segoe UI', Arial, sans-serif;      }
+    </style>
+  <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/embed.js" async="" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script charset="UTF-8" async="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/alfie.js"></script></head>
+
+<body data-twttr-rendered="true" onload="prettyPrint()" data-spy="scroll">
+  <div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/6Dg4oLkBbYq.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/6Dg4oLkBbYq_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/ping.htm" style="display: none;" scrolling="no" allowtransparency="true" name="f2acef2b460f46" frameborder="0"></iframe></div></div></div>
+
+  <div class="container">
+  <!-- <div class="row">
+  <div class="span12">
+    <h1>CSS3 Transitions, Transforms and Animation Tutorial</h1>
+  </div>
+</div>
+ -->
+  <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <ul class="nav">
+          <a class="brand" href="http://css3.bradshawenterprises.com/">CSS3 = Awesome</a>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  The Basics
+                  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="http://css3.bradshawenterprises.com/transitions/">Transitions</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/transforms/">Transforms</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/animations/">Animations</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/filters/">Filters</a></li>
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Examples
+                  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li class=""><a href="http://css3.bradshawenterprises.com/cfimg/">Cross Fading</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/sliding/">Sliding</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/flip/">3D Flipping</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/accordions/">Accordions</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Notes
+                  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="http://css3.bradshawenterprises.com/legacy/">Legacy</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/which-vendor-prefixes-are-needed/">Which Vendor Prefixes are needed?</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/support/">Browser Support</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/references/">Read More…</a></li>
+            </ul>
+          </li>
+
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Techniques
+                  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="http://css3.bradshawenterprises.com/animating_height/">Animating height to auto</a></li>
+               <li><a href="http://css3.bradshawenterprises.com/transition-callbacks/">Callbacks for transitions</a></li>
+               <li><a href="http://css3.bradshawenterprises.com/animation-callbacks/">Callbacks for animations</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Blog
+                  <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                              <li><a href="http://css3.bradshawenterprises.com/blog/css-variables/">How to use CSS Variables</a></li>
+                              <li><a href="http://css3.bradshawenterprises.com/blog/why-sass/">SASS is awesome!</a></li>
+                              <li><a href="http://css3.bradshawenterprises.com/blog/retina-image-replacement-for-new-ipad/">Retina Image Replacement for the New iPad</a></li>
+                              <li><a href="http://css3.bradshawenterprises.com/blog/jquery-vs-css3-transitions/">Speed/framerate comparison between jQuery and CSS3 transitions</a></li>
+                          </ul>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
+        <div class="row">
+      <div id="sub_nav" class="span2">
+        <div data-spy="affix" data-offset-top="0" class="affixed affix">
+        <ul class="nav nav-tabs nav-stacked">            <li><a href="#cfimg1">Demo 1 - One image to another</a></li>
+                      <li><a href="#cfimg2">Demo 2 - One image to another</a></li>
+                      <li><a href="#cfimg3">Demo 3 - One image to another with a timer</a></li>
+                      <li><a href="#cfimg4">Demo 4 - More than just fades</a></li>
+                      <li class=""><a href="#cfimg6">Demo 5 - Animating the background-image property</a></li>
+                      <li class="active"><a href="#cfimg7">Demo 6 -Fading between multiple images on click</a></li>
+                    <li><a href="#comments"><i class="icon-comment-alt"></i> Comments</a></li>
+        </ul>
+                <div id="sm">
+          <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 106px; height: 24px;"><iframe title="+1" data-gapiattached="true" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/fastbutton.htm" name="I0_1428501647966" id="I0_1428501647966" vspace="0" tabindex="0" style="position: static; top: 0px; width: 106px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+          <iframe style="width: 138px; height: 28px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/tweet_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+          <div fb-iframe-plugin-query="app_id=168959539846703&amp;container_width=140&amp;font=lucida%20grande&amp;href=http%3A%2F%2Fcss3.bradshawenterprises.com%2Fcfimg%2F%23cfimg6&amp;layout=button_count&amp;locale=en_GB&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="lucida grande"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe class="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/like.htm" style="border: medium none; visibility: visible; width: 78px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f22e0d2cbc3ba52" frameborder="0" height="1000px" width="450px"></iframe></span></div>
+        </div>
+                </div>
+      </div>
+      <div id="textContent" class="span10">
+        
+        <section id="cfimg">
+  <div class="page-header">
+    <h1>Cross fading images</h1>
+    <script async="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/adsbygoogle.js"></script>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7181696033265659" data-ad-slot="0969051732"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>  </div>
+  <p>Commonly used as part of image galleries, or to show detail on 
+products. This has traditionally been done in javascript by iterating 
+over the opacity - using CSS transitions makes this very easy to add to 
+your site.</p>
+  <section id="cfimg1">
+    <h2>Demo 1 - One image to another, on hover</h2>
+    <h3>Plan</h3>
+    <ol>
+      <li>Put one image on top of the other</li>
+      <li>Change the opacity of the top image on hover</li>
+    </ol>
+    <h3>Demo</h3>
+    <style>
+    #cf {
+      position:relative;
+      height:281px;
+      width:450px;
+      margin:0 auto;
+    }
+    #cf img {
+      position:absolute;
+      left:0;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #cf img.top:hover, #cf img.hover_effect {
+      opacity:0;
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+
+    </style>
+    <div id="cf" class="shadow">
+      <img class="bottom" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Windows%2520Logo.jpg">
+      <img class="top hover" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+    </div>
+    <h3>Code</h3>
+    <p>First up, the HTML markup. Without CSS enabled, you just get two images. Remember to add alt text for production use.</p>
+<pre class="prettyprint lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"bottom"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Windows%20Logo.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"top"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Turtle.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></pre>
+    <p>Then the CSS:</p>
+<pre class="prettyprint lang-css"><span class="com">#cf {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">relative</span><span class="pun">;</span><span class="pln">
+  height</span><span class="pun">:</span><span class="lit">281px</span><span class="pun">;</span><span class="pln">
+  width</span><span class="pun">:</span><span class="lit">450px</span><span class="pun">;</span><span class="pln">
+  margin</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">auto</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf img {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">absolute</span><span class="pun">;</span><span class="pln">
+  left</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf img.top:hover {</span><span class="pln">
+  opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</section>
+<section id="cfimg2">
+  <h2>Demo 2 - One image to another, when a button is pressed (transitions)</h2>
+  <h3>Plan</h3>
+  <p>Same as before, but instead of using the :hover pseudo class, we 
+are going to use javascript to add a toggle a class. I'm using jQuery 
+here because it's easy to understand, though you could just use plain 
+old JS.</p>
+  <h3>Demo</h3>
+  <style>
+  #cf2 {
+    position:relative;
+    height:281px;
+    width:450px;
+    margin:0 auto;
+  }
+  #cf2 img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #cf2 img.transparent {
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  #cf_onclick {
+    cursor:pointer;
+  }
+
+  </style>
+  <script>
+  $(document).ready(function() {
+    $("#cf_onclick, #cf2 img.top").click(function() {
+      $("#cf2 img.top").toggleClass("transparent");
+    });
+  });
+  </script>
+  <div id="cf2" class="shadow">
+    <img class="bottom" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Windows%2520Logo.jpg">
+    <img class="top" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+  </div>
+  <p class="center" id="cf_onclick">Click me to toggle</p>
+  <h3>Code</h3>
+  <p>First up, the HTML markup. Again, with no CSS enabled, you just get two images.</p>
+<pre class="prettyprint lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf2"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"shadow"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"bottom"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Windows%20Logo.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"top"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Turtle.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf_onclick"</span><span class="tag">&gt;</span><span class="pln">Click me to toggle</span><span class="tag">&lt;/p&gt;</span></pre>
+  <p>Then the CSS. I've added a class with the opacity value.</p>
+<pre class="prettyprint lang-css"><span class="com">#cf2 {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">relative</span><span class="pun">;</span><span class="pln">
+  height</span><span class="pun">:</span><span class="lit">281px</span><span class="pun">;</span><span class="pln">
+  width</span><span class="pun">:</span><span class="lit">450px</span><span class="pun">;</span><span class="pln">
+  margin</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">auto</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf2 img {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">absolute</span><span class="pun">;</span><span class="pln">
+  left</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf2 img.transparent {</span><span class="pln">
+opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf_onclick {</span><span class="pln">
+cursor</span><span class="pun">:</span><span class="pln">pointer</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>Then the extremely short JS. Note that the browser is smart enough to
+ realise that it can animate to the new properties, I didn't have to set
+ them in javascript (thought that works too).</p>
+<pre class="prettyprint lang-js"><span class="pln">$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $</span><span class="pun">(</span><span class="str">"#cf_onclick"</span><span class="pun">).</span><span class="pln">click</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $</span><span class="pun">(</span><span class="str">"#cf2 img.top"</span><span class="pun">).</span><span class="pln">toggleClass</span><span class="pun">(</span><span class="str">"transparent"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></pre>
+<p>Have a look at <a href="http://css3.bradshawenterprises.com/demos/multiple_images.php">the multiple image demo</a> to see how to extend this idea to more than two images.</p>
+</section>
+<section id="cfimg3">
+  <h2>Demo 3 - One image to another with a timer (CSS animations)</h2>
+  <h3>Plan</h3>
+  <p>You could implement this by using Javascript to toggle classes with
+ a delay - that would allow older browsers to still have the images 
+change. As we are looking forward though, we'll use CSS keyframes.</p>
+  <ol>
+    <li>Start with two images absolutely positioned on top of each other.</li>
+    <li>Use CSS keyframes to define two states, one with top image transparent, one with it opaque.</li>
+    <li>Set the animations number of iterations to infinite.</li>
+  </ol>
+  <h3>Demo</h3>
+  <style>
+  @-webkit-keyframes cf3FadeInOut {
+   0% {
+     opacity:1;
+   }
+   25% {
+    opacity:1;
+  }
+  75% {
+    opacity:0;
+  }
+  100% {
+   opacity:0;
+ }
+}
+
+@-moz-keyframes cf3FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 25% {
+  opacity:1;
+}
+75% {
+  opacity:0;
+}
+100% {
+ opacity:0;
+}
+}
+
+@-o-keyframes cf3FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 25% {
+  opacity:1;
+}
+75% {
+  opacity:0;
+}
+100% {
+ opacity:0;
+}
+}
+
+@keyframes cf3FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 25% {
+  opacity:1;
+}
+75% {
+  opacity:0;
+}
+100% {
+ opacity:0;
+}
+}
+
+#cf3 {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+#cf3 img {
+  position:absolute;
+  left:0;
+}
+
+#cf3 img.top {
+  -webkit-animation-name: cf3FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-direction: alternate;
+
+  -moz-animation-name: cf3FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 10s;
+  -moz-animation-direction: alternate;
+
+  -o-animation-name: cf3FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 10s;
+  -o-animation-direction: alternate;
+
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+}
+
+</style>
+<div id="cf3" class="shadow">
+  <img class="bottom" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Windows%2520Logo.jpg">
+  <img class="top" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+</div>
+<p class="center">Each image is visible for 9 seconds before fading to the other one.</p>
+<h3>Code</h3>
+<p>Everything's the same as <a href="#cfimg1">Demo 1</a>, but I've added this to the CSS and removed the hover selector</p>
+<pre class="prettyprint lang-css"><span class="pln">  </span><span class="lit">@keyframes</span><span class="pln"> cf3FadeInOut </span><span class="pun">{</span><span class="pln">
+  </span><span class="lit">0</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="lit">45</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="lit">55</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="lit">100</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf3 img.top {</span><span class="pln">
+animation</span><span class="pun">-</span><span class="pln">name</span><span class="pun">:</span><span class="pln"> cf3FadeInOut</span><span class="pun">;</span><span class="pln">
+animation</span><span class="pun">-</span><span class="pln">timing</span><span class="pun">-</span><span class="kwd">function</span><span class="pun">:</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+animation</span><span class="pun">-</span><span class="pln">iteration</span><span class="pun">-</span><span class="pln">count</span><span class="pun">:</span><span class="pln"> infinite</span><span class="pun">;</span><span class="pln">
+animation</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10s</span><span class="pun">;</span><span class="pln">
+animation</span><span class="pun">-</span><span class="pln">direction</span><span class="pun">:</span><span class="pln"> alternate</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>To make sense of that, I've defined 4 keyframes, specified that 
+whatever has this animation attached will be opaque for the first 45%, 
+then transparent for the last 45%. The animation will repeat forever, 
+will last 10 seconds, and will run forward then backwards. In other 
+words, image 1 will be visible for 4.5 seconds, followed by a 1 second 
+fade, followed by 4.5 seconds of image 2 being visible. Then it will 
+reverse, meaning that image 1 and 2 will both be visible for 9 (4.5 x 2)
+ seconds each time.</p>
+
+
+
+<h3>Demo with multiple images</h3>
+<style>
+@-webkit-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-moz-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@-o-keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+@keyframes cf4FadeInOut {
+ 0% {
+   opacity:1;
+ }
+ 17% {
+   opacity:1;
+ }
+ 25% {
+   opacity:0;
+ }
+ 92% {
+   opacity:0;
+ }
+ 100% {
+   opacity:1;
+ }
+}
+
+#cf4a {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+#cf4a img {
+  position:absolute;
+  left:0;
+}
+
+#cf4a img {
+  -webkit-animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 8s;
+
+  -moz-animation-name: cf4FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 8s;
+
+  -o-animation-name: cf4FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 8s;
+
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+#cf4a img:nth-of-type(1) {
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  -o-animation-delay: 6s;
+  animation-delay: 6s;
+}
+#cf4a img:nth-of-type(2) {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
+}
+#cf4a img:nth-of-type(3) {
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  animation-delay: 2s;
+}
+#cf4a img:nth-of-type(4) {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  animation-delay: 0;
+}
+</style>
+<div id="cf4a" class="shadow">
+  <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Windows%2520Logo.jpg">
+  <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+  <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Rainbow%2520Worm.jpg">
+  <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Birdman.jpg">
+</div>
+<p class="center">Staggering the animations can result in a multiple image fader.</p>
+<p>This time I've created an animation that goes from 0 to 1 opacity, then staggered the animations so only one is visible at once.</p>
+<p>Thanks to Pafson's comment, this is finally working as expected! He 
+proposes the following algorithm to determine the percentages and 
+timings:</p>
+<p>For "n" images You must define:<br>
+  a=presentation time for one image<br>
+  b=duration for cross fading<br>
+
+  Total animation-duration is of course t=(a+b)*n<br><br>
+  animation-delay = t/n or = a+b<br><br>
+  Percentage for keyframes:</p>
+  <ol>
+    <li>0%</li>
+    <li>a/t*100%</li>
+    <li>(a+b)/t*100% = 1/n*100%</li>
+    <li>100%-(b/t*100%)</li>
+    <li>100%</li>
+  </ol>
+<pre class="prettyprint lang-css"><span class="lit">@keyframes</span><span class="pln"> cf4FadeInOut </span><span class="pun">{</span><span class="pln">
+  </span><span class="lit">0</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="lit">17</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="lit">25</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="lit">92</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  </span><span class="lit">100</span><span class="pun">%</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf4a img:nth-of-type(1) {</span><span class="pln">
+  animation</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> </span><span class="lit">6s</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf4a img:nth-of-type(2) {</span><span class="pln">
+  animation</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4s</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf4a img:nth-of-type(3) {</span><span class="pln">
+  animation</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2s</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf4a img:nth-of-type(4) {</span><span class="pln">
+  animation</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+</section>
+<section id="cfimg4">
+  <h2>Demo 4 - More than just fades</h2>
+  <p>This technique isn't limited to just fades, you can animate almost every property. Here are a couple of examples.</p>
+  <h3>Zooming in and out</h3>
+  <style>
+  #cf4 {
+    position:relative;
+    height:281px;
+    width:450px;
+    margin:0 auto;
+  }
+  #cf4 img {
+    position:absolute;
+    left:0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #cf4 img.top {
+    -webkit-transform:scale(0,0);
+    -moz-transform:scale(0,0);
+    -o-transform:scale(0,0);
+    transform:scale(0,0);
+    opacity:0;
+
+  }
+
+  #cf4:hover img.top, #cf4.hover_effect img.top {
+    opacity:1;
+    -webkit-transform:scale(1,1);
+    -webkit-transform-origin: top right;
+    -moz-transform:scale(1,1);
+    -moz-transform-origin: top right;
+    -o-transform:scale(1,1);
+    -o-transform-origin: top right;
+    transform:scale(1,1);
+    transform-origin: top right;
+  }
+
+  #cf4:hover img.bottom, #cf4.hover_effect img.bottom {
+    -webkit-transform:scale(0,0);
+    -webkit-transform-origin: bottom left;
+    -moz-transform:scale(0,0);
+    -moz-transform-origin: bottom left;
+    -o-transform:scale(0,0);
+    -o-transform-origin: bottom left;
+    transform:scale(0,0);
+    transform-origin: bottom left;
+  }
+
+  </style>
+  <div id="cf4" class="hover">
+    <img class="bottom shadow" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Rainbow%2520Worm.jpg">
+    <img class="top shadow" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Birdman.jpg">
+  </div>
+  <p class="center">Hover on the image</p>
+  <h3>Rotation</h3>
+  <style>
+  #cf5 {
+    position:relative;
+    height:281px;
+    width:450px;
+    margin:10px auto;
+  }
+  #cf5 img {
+    position:absolute;
+    left:0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+
+  #cf5 img.top {
+    -webkit-transform:scale(1,0);
+    -moz-transform:scale(1,0);
+    -o-transform:scale(1,0);
+    transform:scale(1,0);
+    filter: alpha(opacity=0);
+    opacity:0;
+
+  }
+
+  #cf5:hover img.top, #cf5.hover_effect img.top {
+    opacity:1;
+    -webkit-transform:scale(1,1);
+    -moz-transform:scale(1,1);
+    -o-transform:scale(1,1);
+    transform:scale(1,1);
+  }
+
+  #cf5:hover img.bottom, #cf5.hover_effect img.bottom {
+    filter: alpha(opacity=0);
+    -webkit-transform:rotate(360deg) scale(0,0);
+    -moz-transform:rotate(360deg) scale(0,0);
+    -o-transform:rotate(360deg) scale(0,0);
+    transform:rotate(360deg) scale(0,0);
+  }
+
+  </style>
+  <div id="cf5" class="hover">
+    <img class="bottom shadow" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+    <img class="top shadow" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Rainbow%2520Worm.jpg">
+  </div>
+  <p class="center">Hover on the image</p>
+</section>
+<section id="cfimg6">
+  <h2>Demo 5 - Animating the background-image property</h2>
+  <div class="alert alert-info">Right now this only works on webkits built from 2012 onwards. It's not part of the spec (yet?).</div>
+  <h3>Plan</h3>
+  <ol>
+    <li>Make a div with a width and height</li>
+    <li>Change the background-image property</li>
+  </ol>
+  <h3>Demo</h3>
+  <style>
+  #cf6_image {
+    margin:0 auto;
+    width:450px;
+    height:281px;
+    -webkit-transition: background-image 1s ease-in-out;
+    -moz-transition: background-image 1s ease-in-out;
+    -o-transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out;
+
+    background-image:url("/images/Windows%20Logo.jpg");
+  }
+
+  #cf6_image:hover, #cf6_image.hover_effect {
+    background-image:url("/images/Turtle.jpg");
+  }
+
+  </style>
+  <div id="cf6_image" class="hover"></div>
+  <h3>Code</h3>
+  <p>This only works on Chrome 18+ and on Webkit built in 2012 onwards, 
+including iOS6. It seems to be a side effect of the CSS4 crossfading 
+work, though this is a lot more useful.</p>
+<pre class="prettyprint lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf6_image"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"shadow"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+  <p>Then the CSS:</p>
+<pre class="prettyprint lang-css"><span class="com">#cf6_image {</span><span class="pln">
+  margin</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">auto</span><span class="pun">;</span><span class="pln">
+  width</span><span class="pun">:</span><span class="lit">450px</span><span class="pun">;</span><span class="pln">
+  height</span><span class="pun">:</span><span class="lit">281px</span><span class="pun">;</span><span class="pln">
+  transition</span><span class="pun">:</span><span class="pln"> background</span><span class="pun">-</span><span class="pln">image </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  background</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln">url</span><span class="pun">(</span><span class="str">"/images/Windows%20Logo.jpg"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf6_image:hover {</span><span class="pln">
+  background</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln">url</span><span class="pun">(</span><span class="str">"/images/Turtle.jpg"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>Pretty cool - this can easily be extended by simply changing the 
+background-image property with JS, and makes things much much simpler. 
+I'm not sure if this behaviour is part of the spec or not, and I haven't
+ seen support anywhere other than in the afore mentioned browsers.</p>
+<p>For a slightly more detailed example, have a look at <a href="http://css3.bradshawenterprises.com/demos/filters-and-fades.php">a simple gallery using filters and fades</a>.</p>
+</section>
+<section id="cfimg7">
+  <h1>Demo 6 -Fading between multiple images on click</h1>
+
+  <style>
+  p#cf7_controls {
+    text-align:center;
+  }
+  #cf7_controls span {
+    padding-right:2em;
+    cursor:pointer;
+  }
+  #cf7 {
+    position:relative;
+    height:281px;
+    width:450px;
+    margin:0 auto 10px;
+  }
+  #cf7 img {
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+
+  #cf7 img.opaque {
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
+  }
+  </style>
+  <script>
+  $(document).ready(function() {
+    $("#cf7_controls").on('click', 'span', function() {
+      $("#cf7 img").removeClass("opaque");
+
+      var newImage = $(this).index();
+
+      $("#cf7 img").eq(newImage).addClass("opaque");
+
+      $("#cf7_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  </script>
+  <div id="cf7" class="shadow">
+    <img class="opaque" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Windows%2520Logo.jpg">
+    <img class="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Turtle.jpg">
+    <img class="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Rainbow%2520Worm.jpg">
+    <img class="" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/Birdman.jpg">
+  </div>
+  <p id="cf7_controls">
+    <span class="selected">Image 1</span>
+    <span class="">Image 2</span>
+    <span class="">Image 3</span>
+    <span class="">Image 4</span>
+  </p>
+
+  <p>This is very similar to the others – just layout the images on top 
+of each other, set them all to be transparent, then when the controls 
+are clicked change that one to opaque.</p>
+  <p>For this example:</p>
+  <h4>HTML</h4>
+<pre class="prettyprint lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf7"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"shadow"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">'opaque'</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Windows%20Logo.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Turtle.jpg;"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Rainbow%20Worm.jpg;"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;img</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/images/Birdman.jpg;"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"cf7_controls"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"selected"</span><span class="tag">&gt;</span><span class="pln">Image 1</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+  </span><span class="tag">&lt;span&gt;</span><span class="pln">Image 2</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+  </span><span class="tag">&lt;span&gt;</span><span class="pln">Image 3</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+  </span><span class="tag">&lt;span&gt;</span><span class="pln">Image 4</span><span class="tag">&lt;/span&gt;</span><span class="pln">
+</span><span class="tag">&lt;/p&gt;</span></pre>
+<h4>CSS</h4>
+<pre class="prettyprint lang-css"><span class="pln">p</span><span class="com">#cf7_controls {</span><span class="pln">
+  text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln">center</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf7_controls span {</span><span class="pln">
+  padding</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span><span class="lit">2em</span><span class="pun">;</span><span class="pln">
+  cursor</span><span class="pun">:</span><span class="pln">pointer</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf7 {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">relative</span><span class="pun">;</span><span class="pln">
+  height</span><span class="pun">:</span><span class="lit">281px</span><span class="pun">;</span><span class="pln">
+  width</span><span class="pun">:</span><span class="lit">450px</span><span class="pun">;</span><span class="pln">
+  margin</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">auto</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="com">#cf7 img {</span><span class="pln">
+  position</span><span class="pun">:</span><span class="pln">absolute</span><span class="pun">;</span><span class="pln">
+  left</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  transition</span><span class="pun">:</span><span class="pln"> opacity </span><span class="lit">1s</span><span class="pln"> ease</span><span class="pun">-</span><span class="kwd">in</span><span class="pun">-</span><span class="kwd">out</span><span class="pun">;</span><span class="pln">
+  opacity</span><span class="pun">:</span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="str">"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"</span><span class="pun">;</span><span class="pln">
+  filter</span><span class="pun">:</span><span class="pln"> alpha</span><span class="pun">(</span><span class="pln">opacity</span><span class="pun">=</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="com">#cf7 img.opaque {</span><span class="pln">
+  opacity</span><span class="pun">:</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+  </span><span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="str">"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"</span><span class="pun">;</span><span class="pln">
+  filter</span><span class="pun">:</span><span class="pln"> alpha</span><span class="pun">(</span><span class="pln">opacity</span><span class="pun">=</span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h4>JS</h4>
+<pre class="prettyprint lang-js"><span class="pln">$</span><span class="pun">(</span><span class="pln">document</span><span class="pun">).</span><span class="pln">ready</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  $</span><span class="pun">(</span><span class="str">"#cf7_controls"</span><span class="pun">).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'span'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    $</span><span class="pun">(</span><span class="str">"#cf7 img"</span><span class="pun">).</span><span class="pln">removeClass</span><span class="pun">(</span><span class="str">"opaque"</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">var</span><span class="pln"> newImage </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">).</span><span class="pln">index</span><span class="pun">();</span><span class="pln">
+
+    $</span><span class="pun">(</span><span class="str">"#cf7 img"</span><span class="pun">).</span><span class="pln">eq</span><span class="pun">(</span><span class="pln">newImage</span><span class="pun">).</span><span class="pln">addClass</span><span class="pun">(</span><span class="str">"opaque"</span><span class="pun">);</span><span class="pln">
+
+    $</span><span class="pun">(</span><span class="str">"#cf7_controls span"</span><span class="pun">).</span><span class="pln">removeClass</span><span class="pun">(</span><span class="str">"selected"</span><span class="pun">);</span><span class="pln">
+    $</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">).</span><span class="pln">addClass</span><span class="pun">(</span><span class="str">"selected"</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></pre>
+</section>
+</section>
+<ul class="pager">
+  <li>
+    <a href="http://css3.bradshawenterprises.com/animations/"><i class="icon-arrow-left"></i> Previous</a>
+  </li>
+  <li>
+    <a href="http://css3.bradshawenterprises.com/sliding/">Next <i class="icon-arrow-right"></i></a>
+  </li>
+</ul>
+
+        <section id="comments">
+	<h2>Comments/Questions?</h2>
+	<p>Please add any questions/corrections/extra info below. Please be courteous to other users.</p>
+	<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/a.htm" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 10365px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe><iframe style="width: 780px ! important; border: medium none ! important; overflow: hidden ! important; top: 0px ! important; min-width: 780px ! important; max-width: 780px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-north" id="dsq-indicator-north" frameborder="0"></iframe><iframe style="width: 780px ! important; border: medium none ! important; overflow: hidden ! important; bottom: 0px ! important; min-width: 780px ! important; max-width: 780px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-south" id="dsq-indicator-south" frameborder="0"></iframe></div>
+	<script type="text/javascript">
+	var disqus_shortname = 'css3bradshaw';
+
+					var disqus_identifier = 'cfimg';
+												(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				
+			</section>
+			      </div>
+    </div>
+
+    
+    <hr>
+<footer>
+  <div id="footerLinks" class="row">
+    <div class="span3">
+      <h2>The Basics</h2>
+      <ul>
+        <li><a href="http://css3.bradshawenterprises.com/transitions/">CSS3 Transitions</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/transforms/">CSS3 Transforms</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/animations/">CSS3 Animations</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/filters/">CSS3 Filters</a></li>
+      </ul>
+    </div>
+    <div class="span3">
+      <h2>Examples of use</h2>
+      <ul>
+        <li><a href="http://css3.bradshawenterprises.com/cfimg/">Cross Fading</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/sliding/">Sliding</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/flip/">3D Flipping</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/accordions/">Accordions</a></li>
+      </ul>
+    </div>
+    <div class="span3">
+      <h2>Notes</h2>
+      <ul>
+        <li><a href="http://css3.bradshawenterprises.com/legacy/">Legacy</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/support/">Browser Support</a></li>
+        <li><a href="http://css3.bradshawenterprises.com/references/">What to read next</a></li>
+      </ul>
+    </div>
+    <div class="span3">
+      <h2>Blog</h2>
+      <ul>
+              <li><a href="http://css3.bradshawenterprises.com/blog/css-variables/">How to use CSS Variables</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/blog/why-sass/">SASS is awesome!</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/blog/retina-image-replacement-for-new-ipad/">Retina Image Replacement for the New iPad</a></li>
+              <li><a href="http://css3.bradshawenterprises.com/blog/jquery-vs-css3-transitions/">Speed/framerate comparison between jQuery and CSS3 transitions</a></li>
+            </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="span12 muted">
+      <p>To make as easy as possible, I'm putting style and script tags 
+in each section, just before the demo. This isn't recommended for 
+production use!</p>
+      <p>Any suggestions/improvements/etc, contact me via my Gmail account (rich.bradshaw), or on Twitter (<a href="http://twitter.com/richbradshaw">richbradshaw</a>).</p>
+    </div>
+  </div>
+  <div class="row" id="footerBottom">
+    <div class="span12">
+            <p>© Rich Bradshaw of <a href="http://www.focalstrategy.com/">Focal Strategy</a> 2010 - 2012</p>
+      <a href="http://stackexchange.com/users/2e2b88856f8e4c1ea377453a19fc416e">
+        <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/2e2b88856f8e4c1ea377453a19fc416e.png" alt="profile for Rich Bradshaw on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Rich Bradshaw on Stack Exchange, a network of free, community-driven Q&amp;A sites" height="58" width="208">
+      </a>
+
+      <a rel="author" href="https://plus.google.com/105249724614922381234?rel=author">
+        <img src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/gplus-32.png" height="32" width="32">
+      </a>
+
+    </div>
+  </div>
+</footer>
+
+
+  </div>
+  <div style="position: absolute; top: -250px; left: -250px;"><a href="http://css3.bradshawenterprises.com/hippedhundredfold.php">avenue-origin</a></div>
+  <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/prettify.js"></script>
+<script gapi_processed="true" type="text/javascript" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/plusone.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=168959539846703";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap-transition.js"></script>
+  <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap-modal.js"></script>
+<script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap-dropdown.js"></script>
+<script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap-scrollspy.js"></script>
+              <script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/bootstrap-affix.js"></script>
+<script src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/template.js"></script>
+
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Crossfading%20Images%20_%20CSS%20transitions,%20CSS%20transforms%20and%20CSS%20animation_files/postmessageRelay.htm" id="oauth2relay547591833" name="oauth2relay547591833"></iframe></body></html>
+<!-- Cached on Tue, 25 Feb 2014 20:49:45 +0000 -->

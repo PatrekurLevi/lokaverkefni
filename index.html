@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Grindakerfi Pure CSS">
+        <meta name="author" content="Tækniskólinn - GJG">
+
+        <title>Lokaverkefni Vsh203A</title>
+
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+        
+        <style>
+            body {
+                max-width: 80em;  
+                margin: 1em auto;
+            }
+            img, h1, h3, h4, p {
+                margin: 0;
+                padding: 1em;
+            }
+            h2 {
+                padding-left: 20px;
+            }
+            .pure-g div, 
+            .pure-g article,
+            .pure-g aside,
+            .pure-menu-selected  {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            
+             /*   border: 1px solid rgb(255,195,13);*/
+            }         	
+            .floatright{
+                float: right;
+            }
+            .article.flright {
+                float: right;
+                }
+            .aside.flleft {
+                float: left;
+            }
+            .custom-wrapper {
+                background-color: #ffd390;
+                margin-bottom: 1em;
+                -webkit-font-smoothing: antialiased;
+                height: 2.1em;
+                overflow: hidden;
+                -webkit-transition: height 0.5s;
+                -moz-transition: height 0.5s;
+                -ms-transition: height 0.5s;
+                transition: height 0.5s;
+            }
+            .bleft {
+                border-left: 1px solid
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="navstyle.css">
+    </head>
+    <body>
+        <header class="pure-g">
+        </header>     
+        <section class="pure-g">
+            <article class="pure-u-1 pure-u-md-1 pure-u-lg-16-24">
+                <section class="pure-g">
+                    <div class="pure-u-1 pure-sm-17-24 pure-u-md-15-24 pure-u-lg-15-24">
+                        <h1>Elvis Presley Tónleikar</h1>
+                    </div>
+                    <div class="pure-u-1 pure-sm-7-24 pure-u-md-9-24 pure-u-lg-9-24">
+                        <h2>Háskólabíó</h2>
+                        <h3>20:00 - 02:00</h3>
+                    </div>
+                </section>
+                <section class="pure-g">
+                    <div class="pure-u-1 pure-u-sm-8-24 pure-u-md-8-24 pure-u-lg-8-24">
+                        <h4><span class="glyphicon glyphicon-pushpin"></span> Elvis Prestley Tónleikar</h4>
+                        <p>
+                        </p>
+                        <p><a href="midasala.html">Panta Miða >></a></p>
+                    </div>
+                        <div class="pure-u-1 pure-u-sm-8-24 pure-u-md-8-24 pure-u-lg-8-24">
+                        <div class="bleft">
+                            <ul>
+                        <li>Jailhouse Rock</li>
+                        <li>Falling in Love With You</li>
+                        <li>Always on My Mind</li>
+                        <li>Bluw Suede Shoes</li>
+                        <li>Love ME Tender</li>
+                            </ul>
+                    </div>
+                    </div>
+                        <div class="pure-u-1 pure-u-sm-8-24 pure-u-md-8-24 pure-u-lg-8-24">
+                        <div class="bleft">
+                            <ul>
+                        <li>My Way</li>
+                        <li>Hound Dog</li>
+                        <li>Suspicious Minds</li>
+                        <li>Heartbreak Hotel</li>
+                        <li>In The Getto</li>
+                            </ul>
+                    </div>
+                    </div>
+
+                 </section>
+            </article>
+        	<aside class="pure-u-1 pure-u-md-1 pure-u-lg-8-24">
+                <p> <img class='opaque' src="EPG.jpg" width="300" height="215"/></p>
+            </aside>
+        </section>
+        <footer class="pure-u-1">
+            <p>
+            </p>
+        </footer>
+        <script src="js/ui.js"></script>
+        <script>
+            YUI({
+                classNamePrefix: 'pure'
+            }).use('gallery-sm-menu', function (Y) {
+                var horizontalMenu = new Y.Menu({
+                    container         : '#demo-horizontal-menu',
+                    sourceNode        : '#std-menu-items',
+                    orientation       : 'horizontal',
+                    hideOnOutsideClick: false,
+                    hideOnClick       : false
+                });
+                horizontalMenu.render();
+                horizontalMenu.show();
+        });
+        </script>
+    </body>
+</html>

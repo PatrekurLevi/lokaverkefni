@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Grindakerfi Pure CSS">
+        <meta name="author" content="Tækniskólinn - GJG">
+        <link rel="stylesheet" href="lokaverkefni.css">
+
+        <title>Kvittun Lokaverkefni</title>
+
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+        <style>
+            body {
+                max-width: 80em;  
+                margin: 1em auto;
+            }
+            img, h1, h3, h4, p {
+                margin: 0;
+                padding: 1em;
+            }
+            .pure-g div, 
+            .pure-g article,
+            .pure-g aside,
+            .pure-menu-selected  {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            
+              
+            }
+            
+            .flright {
+                float: right;
+                }
+            .flleft {
+                float: left;
+            }
+            .custom-wrapper {
+                background-color: #ffd390;
+                margin-bottom: 1em;
+                -webkit-font-smoothing: antialiased;
+                height: 2.1em;
+                overflow: hidden;
+                -webkit-transition: height 0.5s;
+                -moz-transition: height 0.5s;
+                -ms-transition: height 0.5s;
+                transition: height 0.5s;
+            }
+            .s1of2 {
+                width: 100%;
+            }
+            
+        </style>
+        <link rel="stylesheet" type="text/css" href="navstyle.css">
+    </head>
+    <body>
+        <nav>
+                
+            </ul>
+        </nav>
+        <header class="pure-g">
+        	
+        	
+        </header>     
+        <section class="pure-g">
+            <article class="pure-u-1 pure-u-md-1 pure-u-lg-16-24">
+                
+    </fieldset>
+</form>
+            </article>    
+        	
+        </section>
+        <footer class="pure-u-1">
+        </footer>
+
+        <script src="js/ui.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+              $("#cf7_controls").on('click', 'span', function() {
+                $("#cf7 img").removeClass("opaque");
+
+                var newImage = $(this).index();
+
+                $("#cf7 img").eq(newImage).addClass("opaque");
+
+                $("#cf7_controls span").removeClass("selected");
+                $(this).addClass("selected");
+              });
+            });
+        </script>
+    </body>
+</html>
