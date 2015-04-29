@@ -41,3 +41,6 @@ p#cf7_controls {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=1);
 }
+.flright {
+  float: right;
+}
